@@ -46,6 +46,21 @@ The image below shows the output, with only three columns
 
 ![image](https://user-images.githubusercontent.com/77758884/131687897-5d4cdcba-c67b-4b26-87dd-74afba3bcaaf.png)
 
+# Renaming Default Variables and Values
+
+We can change and specify the default variable and value names from the above summary using the "var_name" and "value_name" methods. 
+As shown below, variable is changed to "Income" and the value is changed to "Count". 
+
+<code>
+ pew_long = pd.melt(pew, id_vars='religion', var_name='Income', value_name='Count')
+ </code>
+ 
+ The image below shows the result after renaming is done;
+ 
+ ![image](https://user-images.githubusercontent.com/77758884/131693099-79588af5-234f-43f4-bcb7-d734a297d49b.png)
+
+# Using .shape method to check the columns and rows in original and new data frame
+
 
 Next, We can use the .shape method to see the differences in the dataframe upon applying melt() method
 
@@ -56,7 +71,6 @@ As seen above, the original dataframe had 18 rows and 11 columns, while the adju
 
 The visualization below shows this is true
 ![image](https://user-images.githubusercontent.com/77758884/131688572-19495f92-f294-481f-a3a9-bdc33f31fa65.png)
-
 
 # Some Manipulations
 
@@ -75,6 +89,10 @@ Next, we can also get specific items from the data. For example, in the illustra
  And then, there is pulling and printing/filter the rows based on the religion, Income and Count columns
  
  ![image](https://user-images.githubusercontent.com/77758884/131689988-ee8e0ab8-2071-4404-b3a8-274bd70b3e5f.png)
+ 
+ # Conclusion
+ Data cleaning encompsses multiple operations. And although this process only focused on the "melt()" method, other tools and methods for applied in data cleaning.
+ All these rely on how one's dataset looks, and their interest during their data analysis process.
 
  
  
