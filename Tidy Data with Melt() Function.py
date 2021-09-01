@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[76]:
+# In[101]:
 
 
 # Importing pandas which will allow the data cleaning
@@ -15,77 +15,131 @@ pew = pd.read_csv('d:/dswp/datadanielchen/pew.csv')
 pew.head()
 
 
-# In[78]:
+# In[103]:
 
 
 # To display a different proportion of rows, use "n='desired rows'
 # For example
-pew.head(n=12)               # Gives 15 rows
+pew.head(n=12)               # Gives 12 rows
 
 
-# In[75]:
+# In[104]:
 
 
 # We do not want to change the religion column
 pew_long = pd.melt(pew, id_vars='religion')
 
 
-# In[5]:
+# In[105]:
 
 
-pew_long
+pew_long.head(n=12)
 
 
-# In[6]:
+# In[106]:
 
 
 pew_long.head()
 
 
-# In[7]:
+# In[107]:
 
 
 # We can now change and specify the default variable and value names
 # This is done by using the var_name and value_name functions
-# For example    changing the variable above tp income
-# And changing the value 
+# For example changing the variable above to "Income"
+# And changing the value to "Count"
+
 pew_long = pd.melt(pew, id_vars='religion', var_name='Income', value_name='Count')
 
 
-# In[8]:
+# In[108]:
 
 
 pew_long.head(n=10)
 
 
-# In[37]:
+# In[109]:
+
+
+pew_long
+
+
+# In[110]:
+
+
+# We can use the .shape method to see the differences in the dataframe upon applying melt() method
+pew.shape
+
+
+# In[113]:
+
+
+# The above shows the original data has 18 rows and 11 columns
+
+# We can then check the shape for the adjusted pew dataset
+pew_long.shape
+
+
+# In[112]:
+
+
+# The above shows the new data frame has 180 rows and 3 columns
+# This is as shown below
+pew_long
+
+
+# In[114]:
+
+
+pew_long.columns
+
+
+# In[115]:
+
+
+pew_long.head(n=10)
+
+
+# In[116]:
 
 
 # We can print the religion column at index 2
 pew_long.loc[2]
 
 
-# In[47]:
+# In[117]:
 
 
 # We can also visualize rows at 2 and 6 and 18 as shown below
 pew_long.loc[[2,6, 12]]
 
 
-# In[51]:
+# In[118]:
 
 
-# If we need to get all rows in which the Religio is "Agnostic"
+# If we need to get all rows in which the Religion is "Agnostic"
 # And print or filter based on the religion, Income and Count 
 subsetAgnostic = pew_long.loc[pew_long['religion'] == 'Agnostic', ['religion', 'Income', 'Count']]
 subsetAgnostic
 
 
-# In[71]:
+# In[124]:
 
 
 # If we need to get all rows in which the Religio is "Agnostic"
 # And print or filter based on the religion, Income and Count 
-subsetAgnostic = pew_long.loc[(pew_long['religion'] == 'Muslim') & (pew_long['Income'] == '>$10k'), ['religion', 'Income', 'Count']]
+subsetAgnostic = pew_long.loc[(pew_long['religion'] == 'Agnostic') & (pew_long['Income'] == '>150k'),
+                              ['religion', 'Income', 'Count']]
 subsetAgnostic
+
+
+# In[125]:
+
+
+# If we need to get all rows in which the Religio is "Agnostic"
+# And print or filter based on the religion, Income and Count 
+subsetMuslim = pew_long.loc[(pew_long['religion'] == 'Muslim') & (pew_long['Income'] == '>150k'),
+                              ['religion', 'Income', 'Count']]
+subsetMuslim
 
