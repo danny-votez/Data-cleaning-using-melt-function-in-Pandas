@@ -85,10 +85,19 @@ The summary shows that at index 2, religion is Buddhist, with Income of <$10k an
 We can also get data for three elements, i.e., 2, 6, and 12, as shown below;
 ![image](https://user-images.githubusercontent.com/77758884/131689633-0311c114-288e-4e24-968a-0ed48dad4d15.png)
 
+# Additional Visualizations: Getting Specific Counts
+
 Next, we can also get specific items from the data. For example, in the illustration below, the goal is to get all rows in which the Religion is "Agnostic".
  And then, there is pulling and printing/filter the rows based on the religion, Income and Count columns
  
  ![image](https://user-images.githubusercontent.com/77758884/131689988-ee8e0ab8-2071-4404-b3a8-274bd70b3e5f.png)
+ 
+ Next, we can also add some element, to get the row in which religion is "Agnostic" and "Muslim" and the income is ">150k"
+ 
+ The image below shows the output;
+ ![image](https://user-images.githubusercontent.com/77758884/131695073-e6c1ab72-e900-4501-8a63-d52f6f8d4b7d.png)
+ 
+ The above shows for this specified values, the count of Agnostic and Muslim religion with ">150k" is 84 for Agnostic and for Muslim is six (6)
  
  # Conclusion
  Data cleaning encompsses multiple operations. And although this process only focused on the "melt()" method, other tools and methods for applied in data cleaning.
